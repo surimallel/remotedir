@@ -4,13 +4,13 @@ pipeline {
   stages {
     stage ('Build') {
       steps {
-        echo 'building an application
+        echo 'building an application'
       }
     }
   }
   post {
     always {
-      echo "pipeline finished"
+      echo "pipeline finished
     }
     success {
       echo "pipeline success"
