@@ -2,11 +2,10 @@ pipeline {
   agent any
 
   stages {
-    stage ('build') {
+    stage ('Windows') {
       steps {
-        sh 'whoami'
-        sh 'pwd'
-        sh 'ls -l'
+        bat 'echo hello'
+        bat 'cd'
       }
     }
   }
