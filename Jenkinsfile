@@ -2,11 +2,21 @@ pipeline {
   agent any
 
   stages {
-    stage ('Windows') {
+    stage ('Build') {
       steps {
-        bat 'echo hello'
-        bat 'cd'
+        echo 'building an application'
       }
+    }
+  }
+  post {
+    always {
+      echo "pipeline finished"
+    }
+    success {
+      echo "pipeline success"
+    }
+    failure {
+      echo "pipeline failed"
     }
   }
 }
