@@ -4,7 +4,9 @@ pipeline {
   stages {
     stage ('build') {
       steps {
-        echo "Hello this is the first build"
+        sh 'whoami'
+        sh 'pwd'
+        sh 'ls -l'
       }
     }
   }
