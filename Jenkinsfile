@@ -6,7 +6,7 @@ pipeline {
             steps {
                 script {
                     def branchName env.BRANCH_NAME
-                    echo "Branch name ${branchName}
+                    echo "Branch name ${branchName}"
                     
                     if (branchName == 'master') {
                         echo "Production"
