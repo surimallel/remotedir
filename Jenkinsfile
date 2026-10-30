@@ -8,7 +8,7 @@ pipeline {
                     def branchName = env.BRANCH_NAME ?: 'manual'
                     echo "Branch detected: ${branchName}"
                     
-                    if (branchName == 'main') {
+                    if (branchName == 'master') {
                         echo "Production"
                     }
                     else if (branchName == 'develop') {
