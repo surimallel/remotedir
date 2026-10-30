@@ -5,11 +5,8 @@ pipeline {
         stage ('showinput') {
             steps {
                 script {
-                    def branchName = sh (
-                        script: 'git branch --show-current',
-                        returnStdout: true
-                    ).trim ()
-                    echo "Brnach name detected: ${branchName}"
+                    def branchName env.BRANCH_NAME
+                    echo "Branch name ${branchName}
                     
                     if (branchName == 'master') {
                         echo "Production"
