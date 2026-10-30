@@ -1,23 +1,23 @@
 pipeline {
-  agent any
-
-  stages {
-    stage ('Build') {
-      steps {
-        echo 'building an application'
-        sh 'exit 1'
-      }
-    }
-  }
-  post {
-    always {
-      echo "pipeline finished"
-    }
-    success {
-      echo "pipeline success"
-    }
-    failure {
-      echo "pipeline failed"
-    }
-  }
-}
+    agent any
+ 
+    stages {
+        stage ('showinput') {
+            steps {
+                script {
+                    def branchName = env.BRANCH_NAME ?: 'manual'
+                    echo "Branch detected: ${branchName}"
+                    
+                    if (branchName == 'main') {
+                        echo "Production"
+                    }
+                    else if (branchName == 'develop') {
+                        echo "RUN UAT"
+                    }else {
+                        echo "Validation"
+                    }
+                    
+                }
+                
+                    
+                }}}}
