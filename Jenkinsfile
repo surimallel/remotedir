@@ -5,7 +5,7 @@ pipeline {
         stage ('showinput') {
             steps {
                 script {
-                    def branchName env.BRANCH_NAME
+                    def branchName = env.BRANCH_NAME
                     echo "Branch name ${branchName}"
                     
                     if (branchName == 'master') {
