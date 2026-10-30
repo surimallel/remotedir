@@ -6,7 +6,7 @@ pipeline {
             steps {
                 script {
                     def branchName = sh (
-                        script: 'git branch --show-current'
+                        script: 'git branch --show-current',
                         returnStdout: true
                     ).trim ()
                     echo "Brnach name detected"
