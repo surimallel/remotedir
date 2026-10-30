@@ -9,7 +9,7 @@ pipeline {
                         script: 'git branch --show-current',
                         returnStdout: true
                     ).trim ()
-                    echo "Brnach name detected"
+                    echo "Brnach name detected: ${branchName}"
                     
                     if (branchName == 'master') {
                         echo "Production"
