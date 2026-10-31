@@ -1,28 +1,19 @@
 pipeline {
     agent {
-        docker {
-           image 'alpine:3.20' 
-        }
+        label 'windows'
         
     }
  
     stages {
-        stage ('showinput') {
-            steps {
-                script {
-                    def branchName = env.BRANCH_NAME
-                    echo "Branch name ${branchName}"
-                    
-                    if (branchName == 'master') {
-                        echo "Production"
-                    }
-                    else if (branchName == 'develop') {
-                        echo "RUN UAT"
-                    }else {
-                        echo "Validation"
-                    }
-                    
-                }
+        stage ('windows command') {
+           steps {
+               bat '''
+               echo Hello from Windows
+               whoami
+               hostname
+               ver
+               '''
+           }
                 
                     
-                }}}}
+                }}}
