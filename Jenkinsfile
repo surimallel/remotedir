@@ -20,6 +20,7 @@ pipeline {
                sh 'echo Hello from Linux'
                sh 'whoami'
            }
+            }
                  stage ('Docker Stage') {
             docker {
                 image 'alpine:3.20'
@@ -28,12 +29,10 @@ pipeline {
                sh 'echo Hello from Linux'
                sh 'whoami'
             
-           }
-                
-                    
-                }
-                
+           } 
                     
                 }
                     
-                }}
+                }
+                    
+                }
