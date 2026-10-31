@@ -8,8 +8,8 @@ pipeline {
         stage ('check agent'){
             steps {
                 script {
-                    ehco "Name" : ${env.NODE_NAME}
-                    ehco "Workspace" : ${env.WORKSPACE}
+                    echo "Name" : ${env.NODE_NAME}
+                    echo "Workspace" : ${env.WORKSPACE}
                 }
             }
         }
