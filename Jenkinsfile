@@ -5,15 +5,6 @@ pipeline {
     }
  
     stages {
-        stage ('check agent'){
-            steps {
-                script {
-                    echo "Name" : ${env.NODE_NAME}
-                    echo "Workspace" : ${env.WORKSPACE}
-                }
-            }
-        }
-
         
         stage ('windows command') {
            steps {
