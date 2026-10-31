@@ -12,7 +12,6 @@ pipeline {
 
            }
            }
-
             stage ('Linux Stage') {
             agent {
                 label 'linux'
@@ -20,8 +19,19 @@ pipeline {
            steps {
                sh 'echo Hello from Linux'
                sh 'whoami'
+           }
+                 stage ('Docker Stage') {
+            docker {
+                image 'alpine:3.20'
+            }
+           steps {
+               sh 'echo Hello from Linux'
+               sh 'whoami'
             
            }
+                
+                    
+                }
                 
                     
                 }
