@@ -21,7 +21,7 @@ pipeline {
                sh 'whoami'
            }
             }
-                 stage ('Docker Stage') {
+           stage ('Docker Stage') {
             docker {
                 image 'alpine:3.20'
             }
