@@ -8,6 +8,8 @@ pipeline {
 
            }
            }
+        stage ('Tests') {
+            parallel {
             stage ('Unit Test') {
            steps {
                echo "This is Unit Test"
@@ -25,6 +27,8 @@ pipeline {
                echo "This is UI Test"
            }
             }
+            }
+        }
                     
                 }
                     
