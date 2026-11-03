@@ -1,39 +1,30 @@
 pipeline {
-    agent none
+    agent any
  
     stages {
-        stage ('Windows Stage') {
-            agent {
-                label 'windows'
-            }
+        stage ('Build') {
            steps {
-               bat 'echo Hello from Windows'
-               bat 'whoami'
+               echo "This is the build stage"
 
            }
            }
-            stage ('Linux Stage') {
-            agent {
-                label 'linux'
-            }
+            stage ('Unit Test') {
            steps {
-               sh 'echo Hello from Linux'
-               sh 'whoami'
+               echo "This is Unit Test"
            }
             }
-           stage ('Docker Stage') {
-               agent {
-            docker {
-                image 'alpine:3.20'
-            }
-               }
+           stage ('App test') {
            steps {
-               sh 'echo Hello from Linux'
-               sh 'whoami'
+               echo "This is App Test"
             
            } 
                     
                 }
+        stage ('UI Test') {
+           steps {
+               echo "This is UI Test"
+           }
+            }
                     
                 }
                     
