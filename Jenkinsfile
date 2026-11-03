@@ -12,6 +12,7 @@ pipeline {
             parallel {
             stage ('Unit Test') {
            steps {
+               sh 'sleep 3'
                echo "This is Unit Test"
            }
             }
