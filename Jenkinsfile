@@ -28,9 +28,23 @@ pipeline {
                echo "This is UI Test"
            }
             }
+        stage ('Functional Test') {
+           steps {
+               echo "This is Functional Test"
+           }
+            }
+        stage ('Regression Test') {
+           steps {
+               echo "This is Regression Test"
+           }
+            }
+        stage ('Smoke Test') {
+           steps {
+               echo "This is Smoke Test"
+           }
+            }
             }
         }
                     
                 }
-                    
-                }
+}
